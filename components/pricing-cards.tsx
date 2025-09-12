@@ -13,6 +13,34 @@ export default function PricingCards() {
       title: "Wedding Packages",
       packages: [
         {
+          name: "PRIMERY KLKL",
+          price: 55000,
+          details: [
+            "PHOTO",
+            "1 CAMERA",
+            "VIDEO",
+            "1 CAMERA",
+            "ALBUM",
+            "1 30X60 CM ALBUM",
+            "NO TIME DURATION",
+            "55,000 birr",
+          ],
+        },
+        {
+          name: "PRIMERY MELS",
+          price: 55000,
+          details: [
+            "PHOTO",
+            "1 CAMERA",
+            "VIDEO",
+            "1 CAMERA",
+            "ALBUM",
+            "1 30X60 CM ALBUM",
+            "NO TIME DURATION",
+            "55,000 birr",
+          ],
+        },
+        {
           name: "KILKL",
           price: 30000,
           details: [
