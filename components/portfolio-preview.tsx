@@ -30,19 +30,19 @@ export default function PortfolioPreview() {
     {
       title: "Corporate Brand Film",
       category: "Video Production",
-      image: "/placeholder.svg?height=400&width=600&text=Corporate+Film",
+    image: "/corporate-video-production.png",
       description: "A compelling brand story that showcases company values and vision.",
     },
     {
       title: "Wedding Cinematography",
       category: "Event Coverage",
-      image: "/placeholder.svg?height=400&width=600&text=Wedding+Film",
+    image: "/professional-video-production-team-working-in-mode.jpg",
       description: "Capturing precious moments with cinematic elegance and emotion.",
     },
     {
       title: "Product Launch Campaign",
       category: "Commercial",
-      image: "/placeholder.svg?height=400&width=600&text=Product+Launch",
+    image: "/cinematic-film-production-studio-with-professional.jpg",
       description: "Dynamic visuals that drive engagement and boost sales.",
     },
   ]
