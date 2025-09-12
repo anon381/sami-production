@@ -14,8 +14,8 @@ export default function PricingCards() {
       name: "Starter",
       icon: Star,
       description: "Perfect for small projects and startups",
-      monthlyPrice: 299,
-      projectPrice: 1499,
+      monthlyPrice: 5000,
+      projectPrice: 10000,
       popular: false,
       features: [
         "Basic camera work (up to 4 hours)",
@@ -32,8 +32,8 @@ export default function PricingCards() {
       name: "Professional",
       icon: Zap,
       description: "Most popular choice for businesses",
-      monthlyPrice: 599,
-      projectPrice: 2999,
+      monthlyPrice: 10000,
+      projectPrice: 20000,
       popular: true,
       features: [
         "Professional camera work (up to 8 hours)",
@@ -53,8 +53,8 @@ export default function PricingCards() {
       name: "Enterprise",
       icon: Crown,
       description: "Complete solution for large productions",
-      monthlyPrice: 1299,
-      projectPrice: 5999,
+      monthlyPrice: 15000,
+      projectPrice: 30000,
       popular: false,
       features: [
         "Full production crew (unlimited hours)",
