@@ -243,47 +243,52 @@ export default function PricingCards() {
               {category.title}
             </h2>
             <div className={`grid ${category.title === "Ceremony Photo & Video" ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 md:grid-cols-3"} gap-8`}>
-              {category.packages.map((pkg, index) => (
-                <Card
-                  key={pkg.name}
-                  className={`relative group hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 opacity-0 animate-fade-in-up border-border/50 hover:border-secondary/50 overflow-hidden ${
-                    pkg.popular ? "ring-2 ring-secondary scale-105" : ""
-                  }`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  {pkg.popular && (
-                    <Badge className="absolute top-4 right-4 bg-secondary text-secondary-foreground">Most Popular</Badge>
-                  )}
-                  <div className="relative z-10">
-                    <CardHeader className="text-center pb-8">
-                      <CardTitle className="text-2xl text-foreground">{pkg.name}</CardTitle>
-                      <div className="mt-4">
-                        <span className="text-4xl font-bold text-foreground">{pkg.price.toLocaleString()} birr</span>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      <div className="space-y-3">
-                        {pkg.details.map((detail, detailIdx) => (
-                          <div key={detailIdx} className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                            <span className="text-foreground text-sm">{detail}</span>
+              {category.packages.map((pkg, index) => {
+                // For Ceremony Premium Package, place in center column for md screens
+                const isCeremonyPremium = category.title === "Ceremony Photo & Video" && pkg.name === "Ceremony Premium Package";
+                return (
+                  <div key={pkg.name} className={isCeremonyPremium ? "md:col-start-2" : ""}>
+                    <Card
+                      className={`relative group hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 opacity-0 animate-fade-in-up border-border/50 hover:border-secondary/50 overflow-hidden ${
+                        pkg.popular ? "ring-2 ring-secondary scale-105" : ""
+                      }`}
+                      style={{ animationDelay: `${index * 0.2}s` }}
+                    >
+                      {pkg.popular && (
+                        <Badge className="absolute top-4 right-4 bg-secondary text-secondary-foreground">Most Popular</Badge>
+                      )}
+                      <div className="relative z-10">
+                        <CardHeader className="text-center pb-8">
+                          <CardTitle className="text-2xl text-foreground">{pkg.name}</CardTitle>
+                          <div className="mt-4">
+                            <span className="text-4xl font-bold text-foreground">{pkg.price.toLocaleString()} birr</span>
                           </div>
-                        ))}
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+                          <div className="space-y-3">
+                            {pkg.details.map((detail, detailIdx) => (
+                              <div key={detailIdx} className="flex items-start space-x-3">
+                                <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
+                                <span className="text-foreground text-sm">{detail}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <Button
+                            variant={pkg.popular ? "default" : "outline"}
+                            className={`w-full group-hover:scale-105 transition-transform duration-300 ${
+                              pkg.popular
+                                ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                                : "border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                            }`}
+                          >
+                            View Details
+                          </Button>
+                        </CardContent>
                       </div>
-                      <Button
-                        variant={pkg.popular ? "default" : "outline"}
-                        className={`w-full group-hover:scale-105 transition-transform duration-300 ${
-                          pkg.popular
-                            ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
-                            : "border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                        }`}
-                      >
-                        View Details
-                      </Button>
-                    </CardContent>
+                    </Card>
                   </div>
-                </Card>
-              ))}
+                );
+              })}
             </div>
           </div>
         ))}
