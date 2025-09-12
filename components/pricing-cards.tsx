@@ -64,13 +64,17 @@ export default function PricingCards() {
       title: "Event Photography Packages",
       packages: [
         {
-          name: "TEKLIL Premium",
-          price: 60000,
+          name: "FOR ONE DAY Teklil",
+          price: 55000,
           details: [
-            "FOR ONE DAY",
-            "PHOTO: 2 CAMERA",
-            "VIDEO: 2 CAMERA",
-            "ALBUM: 1 30X60 CM ALBUM",
+            "PHOTO",
+            "2 CAMERA",
+            "VIDEO",
+            "2 CAMERA",
+            "ALBUM",
+            "1 30X60 CM ALBUM",
+            "Total Price",
+            "55,000 birr",
           ],
         },
         {
