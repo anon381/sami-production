@@ -264,30 +264,39 @@ export default function PricingCards() {
                 // Fallback to placeholder if not mapped
                 const matchedKey = Object.keys(imageMap).find(key => pkg.name.toLowerCase().includes(key.toLowerCase()));
                 let imageSrc = matchedKey ? imageMap[matchedKey as keyof typeof imageMap] : "/placeholder.jpg";
-                // Split Card Layout
+                // Set background for specific packages
+                const bgImagePackages = ["MELSE", "SHMGLNA", "Special Event Package", "PRIMERY KLKL", "KELKEL Standard"];
+                const isBgImage = bgImagePackages.some(key => pkg.name.toLowerCase().includes(key.toLowerCase()));
                 return (
                   <div key={pkg.name} className={isCeremonyPremium ? "md:col-start-2" : ""}>
                     <Card
                       className={`relative group hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 opacity-0 animate-fade-in-up border-border/50 hover:border-secondary/50 overflow-hidden ${
                         pkg.popular ? "ring-2 ring-secondary scale-105" : ""
                       }`}
-                      style={{ animationDelay: `${index * 0.2}s` }}
+                      style={{
+                        animationDelay: `${index * 0.2}s`,
+                        backgroundImage: isBgImage ? `url(${imageSrc})` : undefined,
+                        backgroundSize: isBgImage ? "cover" : undefined,
+                        backgroundPosition: isBgImage ? "center" : undefined,
+                      }}
                     >
                       {pkg.popular && (
                         <Badge className="absolute top-4 right-4 bg-secondary text-secondary-foreground">Most Popular</Badge>
                       )}
-                      <div className="flex flex-col">
+                      <div className="flex flex-col" style={isBgImage ? { background: "rgba(255,255,255,0.85)" } : {}}>
                         <div className="text-center pt-6 pb-2">
                           <CardTitle className="text-2xl text-foreground mb-2">{pkg.name}</CardTitle>
                           <span className="text-4xl font-bold text-foreground">{pkg.price.toLocaleString()} birr</span>
                         </div>
-                        <div className="w-full flex justify-center">
-                          <img
-                            src={imageSrc}
-                            alt="Package preview"
-                            className="rounded-lg shadow-md w-full h-56 object-cover mb-4"
-                          />
-                        </div>
+                        {!isBgImage && (
+                          <div className="w-full flex justify-center">
+                            <img
+                              src={imageSrc}
+                              alt="Package preview"
+                              className="rounded-lg shadow-md w-full h-56 object-cover mb-4"
+                            />
+                          </div>
+                        )}
                         <div className={`grid gap-2 px-4 mb-4 ${pkg.details.length > 6 ? "grid-cols-3" : "grid-cols-2"}`}>
                           {pkg.details.map((detail, detailIdx) => (
                             <div key={detailIdx} className="flex items-center space-x-2">
