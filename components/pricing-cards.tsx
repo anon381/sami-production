@@ -242,7 +242,7 @@ export default function PricingCards() {
             <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-8 opacity-0 animate-fade-in-up">
               {category.title}
             </h2>
-            <div className={`grid ${category.title === "Ceremony Photo & Video" ? "grid-cols-1 md:grid-cols-1 justify-center place-items-center" : "grid-cols-1 md:grid-cols-3"} gap-8`}>
+            <div className={`grid ${category.title === "Ceremony Photo & Video" ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 md:grid-cols-3"} gap-8`}>
               {category.packages.map((pkg, index) => (
                 <Card
                   key={pkg.name}
