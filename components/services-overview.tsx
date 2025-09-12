@@ -32,28 +32,28 @@ export default function ServicesOverview() {
       title: "Camera Work",
       description: "Professional cinematography with state-of-the-art equipment and creative vision.",
       features: ["4K/8K Recording", "Drone Cinematography", "Multi-Camera Setup", "Professional Lighting"],
-      image: "/professional-camera-equipment-cinematography.jpg",
+    image: "/professional-camera-equipment-cinematography.jpg",
     },
     {
       icon: Video,
       title: "Video Editing",
       description: "Post-production excellence that brings your footage to life with precision and artistry.",
       features: ["Color Grading", "Motion Graphics", "Sound Design", "Visual Effects"],
-      image: "/placeholder.svg?height=300&width=400&text=Video+Editing+Suite",
+    image: "/video-editing-suite-professional.jpg",
     },
     {
       icon: Palette,
       title: "Graphic Design",
       description: "Visual storytelling through compelling graphics, branding, and digital artwork.",
       features: ["Brand Identity", "Motion Graphics", "Print Design", "Digital Assets"],
-      image: "/placeholder.svg?height=300&width=400&text=Design+Studio",
+    image: "/graphic-design-studio-workspace.jpg",
     },
     {
       icon: Radio,
       title: "Live Recording",
       description: "Real-time production services for events, streams, and live performances.",
       features: ["Multi-Camera Live", "Live Streaming", "Event Coverage", "Real-time Editing"],
-      image: "/placeholder.svg?height=300&width=400&text=Live+Recording+Setup",
+    image: "/live-recording-setup-professional.jpg",
     },
   ]
 
