@@ -229,18 +229,7 @@ export default function PricingCards() {
       ],
     },
     {
-      title: "Additional Services",
       packages: [
-        {
-          name: "LANDSCAPE VIDEO",
-          price: 20000,
-          details: [],
-        },
-        {
-          name: "LANDSCAPE VIDEO WITH DRONE",
-          price: 30000,
-          details: [],
-        },
       ],
     },
   ];
