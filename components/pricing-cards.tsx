@@ -13,7 +13,7 @@ export default function PricingCards() {
       title: "Wedding Packages",
       packages: [
         {
-          name: "PRIMERY KLKL / ቅልቅል",
+          name: "PRIMERY KLKL /ዋና ቅልቅል",
           price: 55000,
           details: [
             "PHOTO",
@@ -27,7 +27,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "PRIMERY MELS / መልስ",
+          name: "PRIMERY MELS /ዋና መልስ",
           price: 55000,
           details: [
             "PHOTO",
@@ -41,7 +41,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "KILKL",
+          name: "KILKL / ቅልቅል",
           price: 30000,
           details: [
             "PHOTO",
@@ -55,7 +55,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "Studio & Landscape photo and video Premium",
+          name: "Studio & Landscape photo and video Premium/ የስቱዲዮ እና መስክ ፎቶ እና ቪዲዮ ፕሪሚየም",
           price: 70000,
           details: [
             "one 30×60 Laminated Albums",
