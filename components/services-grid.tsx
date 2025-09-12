@@ -24,7 +24,7 @@ export default function ServicesGrid() {
       title: "Video Editing",
       description: "Post-production excellence with cutting-edge techniques",
       features: ["Color Grading", "Motion Graphics", "Sound Design", "Visual Effects"],
-      image: "/placeholder.svg?height=300&width=400&text=Video+Editing",
+    image: "/video-editing-suite-professional.jpg",
       color: "from-purple-500/20 to-pink-500/20",
     },
     {
@@ -33,7 +33,7 @@ export default function ServicesGrid() {
       title: "Graphic Design",
       description: "Visual storytelling through compelling design",
       features: ["Brand Identity", "Marketing Materials", "Digital Graphics", "Print Design"],
-      image: "/placeholder.svg?height=300&width=400&text=Graphic+Design",
+    image: "/graphic-design-studio-workspace.jpg",
       color: "from-green-500/20 to-emerald-500/20",
     },
     {
@@ -42,7 +42,7 @@ export default function ServicesGrid() {
       title: "Live Recording",
       description: "Real-time production for events and broadcasts",
       features: ["Live Streaming", "Event Coverage", "Multi-Camera Live", "Real-time Mixing"],
-      image: "/placeholder.svg?height=300&width=400&text=Live+Recording",
+    image: "/live-recording-setup-professional.jpg",
       color: "from-orange-500/20 to-red-500/20",
     },
   ]
