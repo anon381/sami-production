@@ -15,7 +15,7 @@ export default function ServicesGrid() {
       title: "Camera Work",
       description: "Professional cinematography and photography services",
       features: ["4K/8K Video Recording", "Drone Cinematography", "Multi-Camera Setup", "Professional Lighting"],
-      image: "/placeholder.svg?height=300&width=400&text=Camera+Work",
+    image: "/professional-camera-equipment-cinematography.jpg",
       color: "from-blue-500/20 to-cyan-500/20",
     },
     {
