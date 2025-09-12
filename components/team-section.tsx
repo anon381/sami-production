@@ -7,10 +7,9 @@ import { Linkedin, Twitter, Instagram } from "lucide-react"
 export default function TeamSection() {
   const team = [
     {
-      name: "Sami Ahmed",
+      name: "Sami ",
       role: "Founder & Creative Director",
       bio: "With over 8 years in media production, Sami leads our creative vision and ensures every project exceeds expectations.",
-      image: "/creative-director-headshot.png",
       skills: ["Creative Direction", "Cinematography", "Project Management"],
       social: {
         linkedin: "#",
@@ -19,7 +18,7 @@ export default function TeamSection() {
       },
     },
     {
-      name: "Maya Rodriguez",
+      name: "Minte",
       role: "Lead Video Editor",
       bio: "Maya brings stories to life in post-production with her expertise in advanced editing techniques and motion graphics.",
       image: "/placeholder-60una.png",
@@ -31,7 +30,7 @@ export default function TeamSection() {
       },
     },
     {
-      name: "Alex Chen",
+      name: "daniel",
       role: "Senior Cinematographer",
       bio: "Alex captures stunning visuals with his technical expertise and artistic eye for composition and lighting.",
       image: "/placeholder-fwwuy.png",
@@ -43,7 +42,7 @@ export default function TeamSection() {
       },
     },
     {
-      name: "Jordan Taylor",
+      name: "bereket",
       role: "Graphic Designer",
       bio: "Jordan creates compelling visual identities and graphics that enhance our video productions and client branding.",
       image: "/placeholder-mqs4y.png",
