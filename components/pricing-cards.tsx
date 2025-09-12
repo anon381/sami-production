@@ -13,6 +13,20 @@ export default function PricingCards() {
       title: "Wedding Packages",
       packages: [
         {
+          name: "KILKL",
+          price: 30000,
+          details: [
+            "PHOTO",
+            "1 CAMERA",
+            "VIDEO",
+            "1 CAMERA",
+            "ALBUM",
+            "1 30X60 CM ALBUM",
+            "Total Price",
+            "30,000 birr",
+          ],
+        },
+        {
           name: "Studio & Landscape photo and video Premium",
           price: 70000,
           details: [
