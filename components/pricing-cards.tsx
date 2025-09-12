@@ -13,12 +13,11 @@ export default function PricingCards() {
       title: "Wedding Packages",
       packages: [
         {
-          name: "Studio & Landscape Premium",
-          price: 80000,
+          name: "Studio & Landscape photo and video Premium",
+          price: 70000,
           details: [
-            "Two 30×60 Laminated Albums",
-            "Three Different Size Canvas Boards for Wall",
-            "One Signing Board OR Sign Book",
+            "one 30×60 Laminated Albums",
+            "two Signing Board OR Sign Book",
           ],
           popular: true,
         },
