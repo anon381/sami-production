@@ -30,11 +30,11 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "Landscape Package",
-          price: 47000,
+          name: "Landscape Package photo and video",
+          price: 45000,
           details: [
             "One 30×60 Laminated Album",
-            "Two 60×60 Canvas Boards for Wall",
+            "One 60×60 Canvas Boards for Wall",
           ],
         },
       ],
