@@ -72,12 +72,6 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-secondary/25">
-              Contact Us
-            </Button>
-          </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -123,9 +117,9 @@ export default function Navigation() {
               </Link>
             ))}
             <div className="px-3 py-2">
-              <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground transition-all duration-300 hover:scale-105">
+              {/* <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground transition-all duration-300 hover:scale-105">
                 Contact Us
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
