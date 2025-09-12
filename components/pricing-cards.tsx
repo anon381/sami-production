@@ -132,13 +132,17 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "SHIMGELENA",
-          price: 40000,
+          name: "SHMGLNA",
+          price: 30000,
           details: [
-            "FOR ONE DAY",
-            "PHOTO: 1 CAMERA",
-            "VIDEO: 1 CAMERA",
-            "ALBUM: 1 30X60 CM ALBUM",
+            "PHOTO",
+            "1 CAMERA",
+            "VIDEO",
+            "1 CAMERA",
+            "ALBUM",
+            "1 30X60 CM ALBUM",
+            "Total Price",
+            "30,000 birr",
           ],
         },
         {
