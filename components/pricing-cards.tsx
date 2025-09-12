@@ -22,11 +22,11 @@ export default function PricingCards() {
           popular: true,
         },
         {
-          name: "Studio & Landscape Standard",
-          price: 60000,
+          name: "Studio & Landscape Standard photo and video",
+          price: 50000,
           details: [
-            "Two 30×60 Laminated Albums",
-            "Three 50×50 Canvas Boards for Wall",
+            "one 30×60 Laminated Albums",
+            "one 50×50 Canvas Boards for Wall",
           ],
         },
         {
