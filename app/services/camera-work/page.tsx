@@ -20,22 +20,22 @@ export default function CameraWorkPage() {
       {
         title: "4K/8K Video Recording",
         description: "Ultra-high definition recording for crystal clear footage",
-        icon: "Video",
+        icon: "Video" as "Video",
       },
       {
         title: "Drone Cinematography",
         description: "Aerial shots and unique perspectives from above",
-        icon: "Plane",
+        icon: "Plane" as "Plane",
       },
       {
         title: "Multi-Camera Setup",
         description: "Comprehensive coverage with multiple angles",
-        icon: "Camera",
+        icon: "Camera" as "Camera",
       },
       {
         title: "Professional Lighting",
         description: "Expert lighting design for perfect ambiance",
-        icon: "Lightbulb",
+        icon: "Lightbulb" as "Lightbulb",
       },
     ],
     process: [
