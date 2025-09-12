@@ -13,7 +13,7 @@ export default function PricingCards() {
       title: "Wedding Packages",
       packages: [
         {
-          name: "PRIMERY KLKL",
+          name: "PRIMERY KLKL / ቅልቅል",
           price: 55000,
           details: [
             "PHOTO",
@@ -27,7 +27,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "PRIMERY MELS",
+          name: "PRIMERY MELS / መልስ",
           price: 55000,
           details: [
             "PHOTO",
