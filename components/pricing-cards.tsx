@@ -64,7 +64,7 @@ export default function PricingCards() {
           popular: true,
         },
         {
-          name: "Studio & Landscape Standard photo and video",
+          name: "Studio & Landscape Standard photo and video / የስቱዲዮ እና መስክ ፎቶ እና ቪዲዮ ስታንዳርድ",
           price: 50000,
           details: [
             "one 30×60 Laminated Albums",
@@ -72,7 +72,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "Landscape Package photo and video",
+          name: "Landscape Package photo and video / የመስክ ፎቶ እና ቪዲዮ ጥቅል",
           price: 45000,
           details: [
             "One 30×60 Laminated Album",
@@ -82,10 +82,10 @@ export default function PricingCards() {
       ],
     },
     {
-      title: "Ceremony Photo & Video",
+      title: "Ceremony Photo & Video / የበዐል ፎቶ እና ቪዲዮ",
       packages: [
         {
-          name: "Ceremony Premium Package",
+          name: "Ceremony Premium Package / የበዐል ፕሪሚየም ጥቅል",
           price: 180000,
           details: [
             "Day  One",
@@ -103,10 +103,10 @@ export default function PricingCards() {
       ],
     },
     {
-      title: "Event Photography Packages",
+      title: "Event Photography Packages / የእቨንት ፎቶግራፊ ጥቅል",
       packages: [
         {
-          name: "FOR ONE DAY Teklil",
+          name: "FOR ONE DAY Teklil / የአንድ ቀን ተክሊል",
           price: 55000,
           details: [
             "PHOTO",
@@ -120,7 +120,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "TEKLIL Standard",
+          name: "TEKLIL Standard /  ተክሊል ስታንዳርድ",
           price: 50000,
           details: [
             "FOR ONE DAY",
@@ -130,7 +130,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "FOR ONE DAY WEDDING AND Special gift",
+          name: "FOR ONE DAY WEDDING AND Special gift / የአንድ ቀን ሰርግ እና ልዩ ስጦታ",
           price: 70000,
           details: [
             "PHOTO",
@@ -145,7 +145,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "FOR ONE DAY WEDDING",
+          name: "FOR ONE DAY WEDDING / የአንድ ቀን ሰርግ",
           price: 50000,
           details: [
             "PHOTO",
@@ -161,10 +161,10 @@ export default function PricingCards() {
       ],
     },
     {
-      title: "Special Event Packages",
+      title: "Special Event Packages / የልዩ እቨንት ጥቅል",
       packages: [
         {
-          name: "MELSE",
+          name: "MELSE / መልስ",
           price: 40000,
           details: [
             "FOR ONE DAY",
@@ -174,7 +174,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "SHMGLNA",
+          name: "SHMGLNA / ሽምግልና",
           price: 30000,
           details: [
             "PHOTO",
@@ -188,7 +188,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "Special Event Package",
+          name: "Special Event Package / የልዩ ኢቨንት ጥቅል",
           price: 35000,
           details: [
             "PHOTO",
@@ -202,7 +202,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "PRIMERY KLKL",
+          name: "PRIMERY KLKL /ዋና ቅልቅል",
           price: 55000,
           details: [
             "PHOTO",
