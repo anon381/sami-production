@@ -228,10 +228,7 @@ export default function PricingCards() {
         },
       ],
     },
-    {
-      packages: [
-      ],
-    },
+  // ...existing code...
   ];
 
   return (
