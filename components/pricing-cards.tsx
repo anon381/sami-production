@@ -141,7 +141,7 @@ export default function PricingCards() {
                     <CardTitle className="text-2xl text-foreground">{pkg.name}</CardTitle>
                     <CardDescription className="text-muted-foreground">{pkg.description}</CardDescription>
                     <div className="mt-4">
-                      <span className="text-4xl font-bold text-foreground">${price}</span>
+                      <span className="text-4xl font-bold text-foreground">ETB {price}</span>
                       <span className="text-muted-foreground">/{billingCycle === "monthly" ? "month" : "project"}</span>
                     </div>
                   </CardHeader>
