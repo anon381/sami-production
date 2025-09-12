@@ -216,7 +216,7 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "KELKEL Standard",
+          name: "KELKEL Standard / ቅልቅል ስታንዳርድ",
           price: 55000,
           details: [
             "FOR ONE DAY",
