@@ -239,13 +239,13 @@ export default function PricingCards() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {categories.map((category, catIdx) => (
           <div key={catIdx} className="mb-16">
-            <h2 className={`text-2xl md:text-3xl font-bold text-secondary mb-8 opacity-0 animate-fade-in-up ${["Ceremony Photo & Video", "Wedding Packages", "Event Photography Packages", "Special Event Packages"].includes(category.title ?? "") ? "md:col-start-2 md:text-center" : ""}`}>
-              {category.title ?? ""}
+            <h2 className={`text-2xl md:text-3xl font-bold text-secondary mb-8 opacity-0 animate-fade-in-up ${category.title?.startsWith("Ceremony Photo & Video") ? "md:col-start-2 md:text-center" : ""}`}>
+              Ceremony Photo & Video / የበዐል ፎቶ እና ቪዲዮ
             </h2>
-            <div className={`grid ${category.title === "Ceremony Photo & Video" ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 md:grid-cols-3"} gap-8`}>
+            <div className={`grid ${category.title?.startsWith("Ceremony Photo & Video") ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 md:grid-cols-3"} gap-8`}>
               {category.packages.map((pkg, index) => {
                 // For Ceremony Premium Package, place in center column for md screens
-                const isCeremonyPremium = category.title === "Ceremony Photo & Video" && pkg.name === "Ceremony Premium Package";
+                const isCeremonyPremium = category.title?.startsWith("Ceremony Photo & Video") && pkg.name?.startsWith("Ceremony Premium Package");
                 return (
                   <div key={pkg.name} className={isCeremonyPremium ? "md:col-start-2" : ""}>
                     <Card
