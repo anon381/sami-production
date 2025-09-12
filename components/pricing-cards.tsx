@@ -270,16 +270,18 @@ export default function PricingCards() {
                               </div>
                             ))}
                           </div>
-                          <Button
-                            variant={pkg.popular ? "default" : "outline"}
-                            className={`w-full group-hover:scale-105 transition-transform duration-300 ${
-                              pkg.popular
-                                ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
-                                : "border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                            }`}
-                          >
-                            View Details
-                          </Button>
+                          <a href="/contact">
+                            <Button
+                              variant={pkg.popular ? "default" : "outline"}
+                              className={`w-full group-hover:scale-105 transition-transform duration-300 ${
+                                pkg.popular
+                                  ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                                  : "border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                              }`}
+                            >
+                              Order
+                            </Button>
+                          </a>
                         </CardContent>
                       </div>
                     </Card>
