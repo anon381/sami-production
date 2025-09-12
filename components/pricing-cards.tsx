@@ -146,13 +146,17 @@ export default function PricingCards() {
           ],
         },
         {
-          name: "PRE WEDDING",
-          price: 40000,
+          name: "Special Event Package",
+          price: 35000,
           details: [
-            "FOR ONE DAY",
-            "PHOTO: 1 CAMERA",
-            "VIDEO: 1 CAMERA",
-            "ALBUM: 1 30X60 CM ALBUM",
+            "PHOTO",
+            "1 CAMERA",
+            "VIDEO",
+            "1 CAMERA",
+            "ALBUM",
+            "1 30X60 CM ALBUM",
+            "Total Price",
+            "35,000 birr",
           ],
         },
         {
