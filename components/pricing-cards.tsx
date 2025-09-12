@@ -243,6 +243,28 @@ export default function PricingCards() {
               {category.packages.map((pkg, index) => {
                 // For Ceremony Premium Package, place in center column for md screens
                 const isCeremonyPremium = category.title === "Ceremony Photo & Video / የበዐል ፎቶ እና ቪዲዮ" && pkg.name?.startsWith("Ceremony Premium Package");
+                // Explicit mapping of package names to image filenames
+                const imageMap: Record<string, string> = {
+                  "PRIMERY KLKL": "/graphic-design-studio-workspace.jpg",
+                  "PRIMERY MELS": "/graphic-design-studio-workspace.jpg",
+                  "KILKL": "/graphic-design-studio-workspace.jpg",
+                  "Studio & Landscape photo and video Premium": "/cinematic-film-production-studio-with-professional.jpg",
+                  "Studio & Landscape Standard photo and video": "/cinematic-film-production-studio-with-professional.jpg",
+                  "Landscape Package photo and video": "/cinematic-film-production-studio-with-professional.jpg",
+                  "Ceremony Premium Package": "/professional-video-production-team-working-in-mode.jpg",
+                  "FOR ONE DAY Teklil": "/professional-camera-equipment-cinematography.jpg",
+                  "TEKLIL Standard": "/professional-camera-equipment-cinematography.jpg",
+                  "FOR ONE DAY WEDDING AND Special gift": "/professional-video-production-team-working-in-mode.jpg",
+                  "FOR ONE DAY WEDDING": "/professional-video-production-team-working-in-mode.jpg",
+                  "MELSE": "/live-recording-setup-professional.jpg",
+                  "SHMGLNA": "/live-recording-setup-professional.jpg",
+                  "Special Event Package": "/live-recording-setup-professional.jpg",
+                  "KELKEL Standard": "/live-recording-setup-professional.jpg",
+                };
+                // Fallback to placeholder if not mapped
+                const matchedKey = Object.keys(imageMap).find(key => pkg.name.toLowerCase().includes(key.toLowerCase()));
+                let imageSrc = matchedKey ? imageMap[matchedKey as keyof typeof imageMap] : "/placeholder.jpg";
+                // Split Card Layout
                 return (
                   <div key={pkg.name} className={isCeremonyPremium ? "md:col-start-2" : ""}>
                     <Card
@@ -254,23 +276,28 @@ export default function PricingCards() {
                       {pkg.popular && (
                         <Badge className="absolute top-4 right-4 bg-secondary text-secondary-foreground">Most Popular</Badge>
                       )}
-                      <div className="relative z-10">
-                        <CardHeader className="text-center pb-8">
-                          <CardTitle className="text-2xl text-foreground">{pkg.name}</CardTitle>
-                          <div className="mt-4">
-                            <span className="text-4xl font-bold text-foreground">{pkg.price.toLocaleString()} birr</span>
-                          </div>
-                        </CardHeader>
-                        <CardContent className="space-y-6">
-                          <div className="space-y-3">
-                            {pkg.details.map((detail, detailIdx) => (
-                              <div key={detailIdx} className="flex items-start space-x-3">
-                                <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                                <span className="text-foreground text-sm">{detail}</span>
-                              </div>
-                            ))}
-                          </div>
-                          <a href="/contact">
+                      <div className="flex flex-col">
+                        <div className="text-center pt-6 pb-2">
+                          <CardTitle className="text-2xl text-foreground mb-2">{pkg.name}</CardTitle>
+                          <span className="text-4xl font-bold text-foreground">{pkg.price.toLocaleString()} birr</span>
+                        </div>
+                        <div className="w-full flex justify-center">
+                          <img
+                            src={imageSrc}
+                            alt="Package preview"
+                            className="rounded-lg shadow-md w-full h-56 object-cover mb-4"
+                          />
+                        </div>
+                        <div className={`grid gap-2 px-4 mb-4 ${pkg.details.length > 6 ? "grid-cols-3" : "grid-cols-2"}`}>
+                          {pkg.details.map((detail, detailIdx) => (
+                            <div key={detailIdx} className="flex items-center space-x-2">
+                              <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
+                              <span className="text-foreground text-sm">{detail}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="px-4 pb-6">
+                          <a href="/contact" className="w-full block">
                             <Button
                               variant={pkg.popular ? "default" : "outline"}
                               className={`w-full group-hover:scale-105 transition-transform duration-300 ${
@@ -282,7 +309,7 @@ export default function PricingCards() {
                               Order
                             </Button>
                           </a>
-                        </CardContent>
+                        </div>
                       </div>
                     </Card>
                   </div>
