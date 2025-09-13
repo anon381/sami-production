@@ -63,25 +63,23 @@ export default function PackagesCTA() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-fade-in-up animate-delay-200">
-                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call for Consultation
+                <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8">
+                  <a href="/contact">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Call for Consultation
+                  </a>
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground px-8 bg-transparent"
-                >
-                  <Mail className="mr-2 h-5 w-5" />
-                  Contact Us
+                <Button asChild variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground px-8 bg-transparent">
+                  <a href="/contact">
+                    <Mail className="mr-2 h-5 w-5" />
+                    Contact Us
+                  </a>
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground px-8 bg-transparent"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Live Chat
+                <Button asChild variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground px-8 bg-transparent">
+                  <a href="/contact">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Live Chat
+                  </a>
                 </Button>
               </div>
 
