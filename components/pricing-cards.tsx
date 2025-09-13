@@ -330,11 +330,12 @@ export default function PricingCards() {
         <div className="text-center mt-12 opacity-0 animate-fade-in-up animate-delay-600">
           <p className="text-muted-foreground mb-4">Need a custom solution?</p>
           <Button
+            asChild
             variant="outline"
             size="lg"
             className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent"
           >
-            Contact Us for Custom Pricing
+            <a href="/contact">Contact Us for Custom Pricing</a>
           </Button>
         </div>
       </div>
