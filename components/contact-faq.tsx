@@ -95,7 +95,7 @@ export default function ContactFAQ() {
           <Button
             size="lg"
             className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
-            onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => window.location.href = "/contact"}
           >
             Contact Us Directly
           </Button>
