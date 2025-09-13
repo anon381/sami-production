@@ -18,7 +18,7 @@ export default function ContactInfo() {
       title: "Office",
       value: "Bole Medhaniyalem",
         description: "Addis Ababa, Ethiopia",
-      action: "https://maps.app.goo.gl/wwn5dMcaNbW2GfAU6",
+      action: "https://maps.app.goo.gl/LJQJeUcYkHQ1f5hL7",
     },
     {
       icon: Clock,
