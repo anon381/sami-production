@@ -9,29 +9,22 @@ export default function ContactInfo() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      description: "Mon-Fri, 9AM-6PM EST",
-      action: "tel:+15551234567",
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      value: "hello@samiproduction.com",
-      description: "We respond within 24 hours",
-      action: "mailto:hello@samiproduction.com",
+      value: "+251989043855",
+      description: "Call us anytime",
+      action: "tel:+251989043855",
     },
     {
       icon: MapPin,
       title: "Office",
-      value: "123 Creative Street",
-      description: "New York, NY 10001",
-      action: "#",
+      value: "Bole Medhaniyalem",
+        description: "Addis Ababa, Ethiopia",
+      action: "https://maps.app.goo.gl/wwn5dMcaNbW2GfAU6",
     },
     {
       icon: Clock,
       title: "Business Hours",
-      value: "Monday - Friday",
-      description: "9:00 AM - 6:00 PM EST",
+      value: "Monday - Sunday",
+      description: "8:00 AM - 7:00 PM",
       action: "#",
     },
   ]
@@ -89,7 +82,7 @@ export default function ContactInfo() {
           </div>
 
           {/* Social Media */}
-          <Card className="opacity-0 animate-fade-in-up animate-delay-400">
+          {/* <Card className="opacity-0 animate-fade-in-up animate-delay-400">
             <CardContent className="p-6">
               <h3 className="font-semibold text-foreground mb-4 text-center">Follow Us</h3>
               <div className="flex justify-center space-x-4">
@@ -109,7 +102,7 @@ export default function ContactInfo() {
                 })}
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Emergency Contact */}
           <Card className="bg-secondary/5 border-secondary/20 opacity-0 animate-fade-in-up animate-delay-600">
@@ -119,10 +112,10 @@ export default function ContactInfo() {
               <Button
                 size="sm"
                 className="bg-secondary hover:bg-secondary/90 text-secondary-foreground"
-                onClick={() => (window.location.href = "tel:+15551234567")}
+                onClick={() => (window.location.href = "tel:+251989043855")}
               >
                 <Phone className="mr-2 h-4 w-4" />
-                Call Emergency Line
+                
               </Button>
             </CardContent>
           </Card>
