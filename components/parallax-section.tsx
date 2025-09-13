@@ -44,7 +44,7 @@ export default function ParallaxSection() {
       {/* Parallax Solid Grey Layer */}
       <div
         ref={imageRef}
-        className="absolute inset-0 w-full h-[120%] bg-gray-900 z-10"
+  className="absolute inset-0 w-full h-[120%] bg-orange-300 z-10"
       />
 
       {/* Content */}
