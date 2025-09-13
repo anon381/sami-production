@@ -24,18 +24,28 @@ export default function ParallaxSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden">
-      {/* Parallax Background */}
+    <section
+      ref={sectionRef}
+      className="relative h-screen overflow-hidden"
+      style={{
+        backgroundImage: "url('/professional-video-production-team-working-in-mode.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Fixed Background Image */}
       <div
-        ref={imageRef}
-        className="absolute inset-0 w-full h-[120%] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
         style={{
           backgroundImage: "url('/professional-video-production-team-working-in-mode.jpg')",
         }}
       />
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      {/* Parallax Solid Grey Layer */}
+      <div
+        ref={imageRef}
+        className="absolute inset-0 w-full h-[120%] bg-gray-900 z-10"
+      />
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center justify-center">
