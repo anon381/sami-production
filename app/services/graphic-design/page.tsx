@@ -57,7 +57,13 @@ export default function GraphicDesignPage() {
   return (
     <main className="min-h-screen">
       <Navigation />
+     
       <ServiceDetailHero {...serviceData} />
+       <div className="max-w-7xl mx-auto px-4 pt-6">
+        <a href="/services" className="inline-block mb-6">
+          <button className="px-4 py-2 rounded bg-secondary text-secondary-foreground hover:bg-secondary/80 font-semibold shadow">Back to Services</button>
+        </a>
+      </div>
       <ServiceFeatures features={serviceData.features} />
       <ServiceProcess process={serviceData.process} />
       {/* <ServicePortfolio portfolio={serviceData.portfolio} /> */}
