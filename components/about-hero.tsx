@@ -27,10 +27,7 @@ export default function AboutHero() {
             </div>
 
             <div className="opacity-0 animate-fade-in-up animate-delay-200">
-              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Our Story
-              </Button>
+              
             </div>
           </div>
 
