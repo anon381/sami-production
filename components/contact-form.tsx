@@ -17,12 +17,10 @@ export default function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    company: "",
-    service: "",
-    budget: "",
+    type: "",
+    services: [],
     timeline: "",
     message: "",
-    newsletter: false,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
@@ -53,8 +51,17 @@ export default function ContactForm() {
     }, 2000)
   }
 
-  const handleInputChange = (field: string, value: string | boolean) => {
+  const handleInputChange = (field: string, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleServiceChange = (service: string, checked: boolean) => {
+    setFormData((prev) => {
+      const services = checked
+        ? [...prev.services, service]
+        : prev.services.filter((s: string) => s !== service)
+      return { ...prev, services }
+    })
   }
 
   return (
@@ -94,81 +101,71 @@ export default function ContactForm() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    placeholder="+1 (555) 123-4567"
-                  />
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone Number *</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange("phone", e.target.value)}
+                  placeholder="+251989043855"
+                  required
+                />
+              </div>
+
+              {/* Type Radio Group */}
+              <div className="space-y-2">
+                <Label>Who are you?</Label>
+                <div className="grid grid-cols-2 gap-2">
+                  {['Company', 'Church', 'Team', 'Individual', 'Family', 'Friends', 'Other'].map((type) => (
+                    <label key={type} className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="type"
+                        value={type}
+                        checked={formData.type === type}
+                        onChange={() => handleInputChange("type", type)}
+                        className="accent-secondary"
+                      />
+                      <span className="text-sm">{type}</span>
+                    </label>
+                  ))}
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="company">Company Name</Label>
-                  <Input
-                    id="company"
-                    value={formData.company}
-                    onChange={(e) => handleInputChange("company", e.target.value)}
-                    placeholder="Your Company"
-                  />
+              </div>
+
+              {/* Services Needed Checkboxes */}
+              <div className="space-y-2">
+                <Label>Service Needed</Label>
+                <div className="grid grid-cols-2 gap-2">
+                  {['Live Recording', 'Camera Work', 'Video Editing', 'Graphics Design'].map((service) => (
+                    <label key={service} className="flex items-center space-x-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="services"
+                        value={service}
+                        checked={formData.services.includes(service)}
+                        onChange={(e) => handleServiceChange(service, e.target.checked)}
+                        className="accent-secondary"
+                      />
+                      <span className="text-sm">{service}</span>
+                    </label>
+                  ))}
                 </div>
+              </div>
+
+              {/* Project Timeline Calendar */}
+              <div className="space-y-2">
+                <Label htmlFor="timeline">Project Timeline</Label>
+                <Input
+                  id="timeline"
+                  type="date"
+                  value={formData.timeline}
+                  onChange={(e) => handleInputChange("timeline", e.target.value)}
+                  required
+                />
               </div>
 
               {/* Project Details */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="service">Service Needed *</Label>
-                  <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="camera-work">Camera Work</SelectItem>
-                      <SelectItem value="video-editing">Video Editing</SelectItem>
-                      <SelectItem value="graphic-design">Graphic Design</SelectItem>
-                      <SelectItem value="live-recording">Live Recording</SelectItem>
-                      <SelectItem value="multiple">Multiple Services</SelectItem>
-                      <SelectItem value="not-sure">Not Sure</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="budget">Budget Range</Label>
-                  <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select budget range" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="under-1k">Under $1,000</SelectItem>
-                      <SelectItem value="1k-5k">$1,000 - $5,000</SelectItem>
-                      <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
-                      <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                      <SelectItem value="25k-plus">$25,000+</SelectItem>
-                      <SelectItem value="discuss">Let's Discuss</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="timeline">Project Timeline</Label>
-                <Select value={formData.timeline} onValueChange={(value) => handleInputChange("timeline", value)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="When do you need this completed?" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="asap">ASAP</SelectItem>
-                    <SelectItem value="1-week">Within 1 week</SelectItem>
-                    <SelectItem value="2-weeks">Within 2 weeks</SelectItem>
-                    <SelectItem value="1-month">Within 1 month</SelectItem>
-                    <SelectItem value="2-months">Within 2 months</SelectItem>
-                    <SelectItem value="flexible">I'm flexible</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
               <div className="space-y-2">
                 <Label htmlFor="message">Project Details *</Label>
                 <Textarea
@@ -179,18 +176,6 @@ export default function ContactForm() {
                   rows={5}
                   required
                 />
-              </div>
-
-              {/* Newsletter Checkbox */}
-              <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="newsletter"
-                  checked={formData.newsletter}
-                  onCheckedChange={(checked) => handleInputChange("newsletter", checked as boolean)}
-                />
-                <Label htmlFor="newsletter" className="text-sm">
-                  Subscribe to our newsletter for tips and updates
-                </Label>
               </div>
 
               {/* Submit Button */}
