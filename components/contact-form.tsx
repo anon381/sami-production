@@ -116,18 +116,22 @@ export default function ContactForm() {
               {/* Type Radio Group */}
               <div className="space-y-2">
                 <Label>Who are you?</Label>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="flex flex-wrap gap-2">
                   {['Company', 'Church', 'Team', 'Individual', 'Family', 'Friends', 'Other'].map((type) => (
-                    <label key={type} className="flex items-center space-x-2 cursor-pointer">
+                    <label key={type} className={`cursor-pointer`}> 
                       <input
                         type="radio"
                         name="type"
                         value={type}
                         checked={formData.type === type}
                         onChange={() => handleInputChange("type", type)}
-                        className="accent-secondary"
+                        className="hidden"
                       />
-                      <span className="text-sm">{type}</span>
+                      <span
+                        className={`inline-block px-4 py-2 rounded-full border text-sm font-medium transition-colors duration-200 ${formData.type === type ? 'bg-orange-500 text-white border-orange-500' : 'bg-orange-100 text-orange-700 border-orange-300 hover:bg-orange-200 hover:text-orange-800'}`}
+                      >
+                        {type}
+                      </span>
                     </label>
                   ))}
                 </div>
@@ -136,18 +140,22 @@ export default function ContactForm() {
               {/* Services Needed Checkboxes */}
               <div className="space-y-2">
                 <Label>Service Needed</Label>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="flex flex-wrap gap-2">
                   {['Live Recording', 'Camera Work', 'Video Editing', 'Graphics Design'].map((service) => (
-                    <label key={service} className="flex items-center space-x-2 cursor-pointer">
+                    <label key={service} className={`cursor-pointer`}>
                       <input
                         type="checkbox"
                         name="services"
                         value={service}
                         checked={formData.services.includes(service)}
                         onChange={(e) => handleServiceChange(service, e.target.checked)}
-                        className="accent-secondary"
+                        className="hidden"
                       />
-                      <span className="text-sm">{service}</span>
+                      <span
+                        className={`inline-block px-4 py-2 rounded-full border text-sm font-medium transition-colors duration-200 ${formData.services.includes(service) ? 'bg-orange-500 text-white border-orange-500' : 'bg-orange-100 text-orange-700 border-orange-300 hover:bg-orange-200 hover:text-orange-800'}`}
+                      >
+                        {service}
+                      </span>
                     </label>
                   ))}
                 </div>
