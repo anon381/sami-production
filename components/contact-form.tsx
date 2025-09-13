@@ -13,7 +13,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Send, CheckCircle, AlertCircle } from "lucide-react"
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
+  type ContactFormState = {
+    name: string;
+    email: string;
+    phone: string;
+    type: string;
+    services: string[];
+    timeline: string;
+    message: string;
+  };
+
+  const [formData, setFormData] = useState<ContactFormState>({
     name: "",
     email: "",
     phone: "",
@@ -21,7 +31,7 @@ export default function ContactForm() {
     services: [],
     timeline: "",
     message: "",
-  })
+  });
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
@@ -39,12 +49,10 @@ export default function ContactForm() {
           name: "",
           email: "",
           phone: "",
-          company: "",
-          service: "",
-          budget: "",
+          type: "",
+          services: [],
           timeline: "",
           message: "",
-          newsletter: false,
         })
         setSubmitStatus("idle")
       }, 3000)
