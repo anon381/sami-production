@@ -4,7 +4,7 @@ import AboutStory from "@/components/about-story"
 import TeamSection from "@/components/team-section"
 import CompanyValues from "@/components/company-values"
 import AboutTimeline from "@/components/about-timeline"
-import ClientTestimonials from "@/components/client-testimonials"
+// import ClientTestimonials from "@/components/client-testimonials"
 import AboutCTA from "@/components/about-cta"
 
 export const metadata = {
@@ -21,7 +21,7 @@ export default function AboutPage() {
       <TeamSection />
       <CompanyValues />
       <AboutTimeline />
-      <ClientTestimonials />
+      {/* <ClientTestimonials /> */}
       <AboutCTA />
     </main>
   )
