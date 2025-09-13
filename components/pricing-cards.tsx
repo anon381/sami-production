@@ -1,5 +1,5 @@
 "use client"
-
+import { X } from "lucide-react"
 import { useState } from "react"
 import { CardTitle } from "@/components/ui/card"
 import { ReusableCard } from "@/components/ui/reusable-card"
@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Star, Zap, Crown } from "lucide-react"
 
 export default function PricingCards() {
+  // State for selected package (for modal/lightbox)
+  const [selectedPackage, setSelectedPackage] = useState<any | null>(null);
   // New structure: categories with packages and details
   const categories = [
     {
@@ -242,7 +244,6 @@ export default function PricingCards() {
             </h2>
             <div className={`grid grid-cols-1 md:grid-cols-3 gap-8`}>
               {category.packages.map((pkg, index) => {
-                // For Ceremony Premium Package, place in center column for md screens
                 const isCeremonyPremium = category.title === "Ceremony Photo & Video / የበዐል ፎቶ እና ቪዲዮ" && pkg.name?.startsWith("Ceremony Premium Package");
                 const imageMap: Record<string, string> = {
                   "PRIMERY KLKL": "/graphic-design-studio-workspace.jpg",
@@ -265,41 +266,43 @@ export default function PricingCards() {
                 let imageSrc = matchedKey ? imageMap[matchedKey as keyof typeof imageMap] : "/placeholder.jpg";
                 return (
                   <div key={pkg.name} className={isCeremonyPremium ? "md:col-start-2" : ""}>
-                    <ReusableCard
-                      image={imageSrc}
-                      title={pkg.name}
-                      description={pkg.details.join(", ")}
-                      tags={[]}
-                    >
-                      <div className="text-center pt-2 pb-2">
-                        <span className="text-4xl font-bold text-foreground">{pkg.price.toLocaleString()} birr</span>
-                      </div>
-                      <div className={`grid gap-2 px-4 mb-4 ${pkg.details.length > 6 ? "grid-cols-3" : "grid-cols-2"}`}>
-                        {pkg.details.map((detail, detailIdx) => (
-                          <div key={detailIdx} className="flex items-center space-x-2">
-                            <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
-                            <span className="text-foreground text-sm">{detail}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="px-4 pb-6">
-                        <a href="/contact" className="w-full block">
-                          <Button
-                            variant={pkg.popular ? "default" : "outline"}
-                            className={`w-full group-hover:scale-105 transition-transform duration-300 ${
-                              pkg.popular
-                                ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
-                                : "border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
-                            }`}
-                          >
-                            Order
-                          </Button>
-                        </a>
-                      </div>
-                      {pkg.popular && (
-                        <Badge className="absolute top-4 right-4 bg-secondary text-secondary-foreground">Most Popular</Badge>
-                      )}
-                    </ReusableCard>
+                    <div onClick={() => setSelectedPackage({ ...pkg, imageSrc })} style={{ cursor: "pointer" }}>
+                      <ReusableCard
+                        image={imageSrc}
+                        title={pkg.name}
+                        description={pkg.details.join(", ")}
+                        tags={[]}
+                      >
+                        <div className="text-center pt-2 pb-2">
+                          <span className="text-4xl font-bold text-foreground">{pkg.price.toLocaleString()} birr</span>
+                        </div>
+                        <div className={`grid gap-2 px-4 mb-4 ${pkg.details.length > 6 ? "grid-cols-3" : "grid-cols-2"}`}>
+                          {pkg.details.map((detail, detailIdx) => (
+                            <div key={detailIdx} className="flex items-center space-x-2">
+                              <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
+                              <span className="text-foreground text-sm">{detail}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="px-4 pb-6">
+                          <a href="/contact" className="w-full block">
+                            <Button
+                              variant={pkg.popular ? "default" : "outline"}
+                              className={`w-full group-hover:scale-105 transition-transform duration-300 ${
+                                pkg.popular
+                                  ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                                  : "border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+                              }`}
+                            >
+                              Order
+                            </Button>
+                          </a>
+                        </div>
+                        {pkg.popular && (
+                          <Badge className="absolute top-4 right-4 bg-secondary text-secondary-foreground">Most Popular</Badge>
+                        )}
+                      </ReusableCard>
+                    </div>
                   </div>
                 );
               })}
@@ -317,6 +320,54 @@ export default function PricingCards() {
             <a href="/contact">Contact Us for Custom Pricing</a>
           </Button>
         </div>
+        {selectedPackage && (
+          <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
+            <div className="relative max-w-4xl max-h-full w-full">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="absolute -top-12 right-0 text-white hover:text-secondary z-10"
+                onClick={() => setSelectedPackage(null)}
+              >
+                <X className="h-6 w-6" />
+              </Button>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-card rounded-2xl overflow-hidden">
+                {/* Image */}
+                <div>
+                  <img
+                    src={selectedPackage.imageSrc || "/placeholder.svg"}
+                    alt={selectedPackage.name}
+                    className="w-full h-96 lg:h-full object-cover"
+                  />
+                </div>
+                {/* Details */}
+                <div className="p-8 space-y-6">
+                  <div>
+                    <h2 className="text-2xl font-bold text-foreground mb-2">{selectedPackage.name}</h2>
+                    <p className="text-secondary font-medium">
+                      {selectedPackage.price.toLocaleString()} birr
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    {selectedPackage.details.map((detail: string, idx: number) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
+                        <span className="text-foreground text-sm">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="pt-4">
+                    <a href="/contact">
+                      <Button variant="default" className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+                        Order This Package
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
