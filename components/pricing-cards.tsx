@@ -246,21 +246,21 @@ export default function PricingCards() {
               {category.packages.map((pkg, index) => {
                 const isCeremonyPremium = category.title === "Ceremony Photo & Video / የበዐል ፎቶ እና ቪዲዮ" && pkg.name?.startsWith("Ceremony Premium Package");
                 const imageMap: Record<string, string> = {
-                  "PRIMERY KLKL": "/graphic-design-studio-workspace.jpg",
-                  "PRIMERY MELS": "/graphic-design-studio-workspace.jpg",
-                  "KILKL": "/graphic-design-studio-workspace.jpg",
-                  "Studio & Landscape photo and video Premium": "/cinematic-film-production-studio-with-professional.jpg",
-                  "Studio & Landscape Standard photo and video": "/cinematic-film-production-studio-with-professional.jpg",
-                  "Landscape Package photo and video": "/cinematic-film-production-studio-with-professional.jpg",
-                  "Ceremony Premium Package": "/professional-video-production-team-working-in-mode.jpg",
-                  "FOR ONE DAY Teklil": "/professional-camera-equipment-cinematography.jpg",
-                  "TEKLIL Standard": "/professional-camera-equipment-cinematography.jpg",
-                  "FOR ONE DAY WEDDING AND Special gift": "/professional-video-production-team-working-in-mode.jpg",
-                  "FOR ONE DAY WEDDING": "/professional-video-production-team-working-in-mode.jpg",
-                  "MELSE": "/live-recording-setup-professional.jpg",
-                  "SHMGLNA": "/live-recording-setup-professional.jpg",
-                  "Special Event Package": "/live-recording-setup-professional.jpg",
-                  "KELKEL Standard": "/live-recording-setup-professional.jpg",
+                  "PRIMERY KLKL": "/package/PRIMERY KLKL.png",
+                  "PRIMERY MELS": "/package/PRIMERY MELS.png",
+                  "KILKL": "/package/KILKL.png",
+                  "Studio & Landscape photo and video Premium": "/package/Studio & Landscape photo and video Premium.png",
+                  "Studio & Landscape Standard photo and video": "/package/Studio & Landscape Standard photo and video .png",
+                  "Landscape Package photo and video": "/package/Landscape Package photo and video.png",
+                  "Ceremony Premium Package": "/package/Ceremony Premium Package.png",
+                  "FOR ONE DAY Teklil": "/package/FOR ONE DAY Teklil .png",
+                  "TEKLIL Standard": "/package/TEKLIL Standard.png",
+                  "FOR ONE DAY WEDDING AND Special gift": "/package/FOR ONE DAY WEDDING AND Special gift.png",
+                  "FOR ONE DAY WEDDING": "/package/FOR ONE DAY WEDDING.png",
+                  "MELSE": "/package/teklil.jpg",
+                  "SHMGLNA": "/package/SHMGLNA .png",
+                  "Special Event Package": "/package/Special Event Package.png",
+                  "KELKEL Standard": "/package/KELKEL Standard.png",
                 };
                 const matchedKey = Object.keys(imageMap).find(key => pkg.name.toLowerCase().includes(key.toLowerCase()));
                 let imageSrc = matchedKey ? imageMap[matchedKey as keyof typeof imageMap] : "/placeholder.jpg";
