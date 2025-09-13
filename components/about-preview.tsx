@@ -1,12 +1,13 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Users, Award, Clock, Heart } from "lucide-react"
 import Link from "next/link"
 
 export default function AboutPreview() {
   const sectionRef = useRef<HTMLElement>(null)
+  const [bgPos, setBgPos] = useState("center")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,7 +24,21 @@ export default function AboutPreview() {
     const elements = sectionRef.current?.querySelectorAll(".animate-on-scroll")
     elements?.forEach((el) => observer.observe(el))
 
-    return () => observer.disconnect()
+    // Parallax effect
+    const handleScroll = () => {
+      if (!sectionRef.current) return
+      const rect = sectionRef.current.getBoundingClientRect()
+      const scrolled = window.pageYOffset
+  const rate = scrolled * -0.9
+      if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+        setBgPos(`center ${rate}px`)
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      observer.disconnect()
+      window.removeEventListener("scroll", handleScroll)
+    }
   }, [])
 
   const values = [
@@ -50,7 +65,16 @@ export default function AboutPreview() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-24 bg-background">
+    <section
+      ref={sectionRef}
+      className="py-24"
+      style={{
+        backgroundImage: "url('/corporate-video-production.png')",
+        backgroundSize: "cover",
+        backgroundPosition: bgPos,
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -98,5 +122,9 @@ export default function AboutPreview() {
         </div>
       </div>
     </section>
-  )
+   
+  );
 }
+
+
+
