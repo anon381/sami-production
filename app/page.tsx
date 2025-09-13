@@ -3,7 +3,7 @@ import HeroSection from "@/components/hero-section"
 import ServicesOverview from "@/components/services-overview"
 import PortfolioPreview from "@/components/portfolio-preview"
 import AboutPreview from "@/components/about-preview"
-import TestimonialsSection from "@/components/testimonials-section"
+// import TestimonialsSection from "@/components/testimonials-section"
 import ParallaxSection from "@/components/parallax-section"
 
 export default function HomePage() {
@@ -15,7 +15,7 @@ export default function HomePage() {
       <ParallaxSection />
       <PortfolioPreview />
       <AboutPreview />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
     </main>
   )
 }
