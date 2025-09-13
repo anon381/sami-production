@@ -60,7 +60,7 @@ export default function GraphicDesignPage() {
       <ServiceDetailHero {...serviceData} />
       <ServiceFeatures features={serviceData.features} />
       <ServiceProcess process={serviceData.process} />
-      <ServicePortfolio portfolio={serviceData.portfolio} />
+      {/* <ServicePortfolio portfolio={serviceData.portfolio} /> */}
     </main>
   );
 }
