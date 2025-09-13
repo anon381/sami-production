@@ -101,8 +101,8 @@ export default function HeroSection() {
               { number: "24/7", label: "Support Available" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-secondary">{stat.number}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-2xl md:text-3xl font-bold text-orange-300">{stat.number}</div>
+                <div className="text-sm text-white">{stat.label}</div>
               </div>
             ))}
           </div>
