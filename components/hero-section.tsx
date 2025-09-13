@@ -44,7 +44,7 @@ export default function HeroSection() {
               Bringing Your
               <span className="text-secondary block">Vision to Life</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
+            <p className="text-lg md:text-xl font-bold text-white max-w-3xl mx-auto leading-relaxed text-pretty">
               Professional media production services that transform your ideas into compelling visual stories. From
               concept to completion, we deliver excellence in every frame.
             </p>
