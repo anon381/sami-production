@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState, useEffect } from "react"
@@ -22,16 +23,17 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-muted/20">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: "url('/live-recording-setup-professional.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Background Video Placeholder */}
-      <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-r from-primary/20 to-secondary/20 opacity-50" />
-        <img
-          src="/cinematic-film-production-studio-with-professional.jpg"
-          alt="Production Studio Background"
-          className="w-full h-full object-cover opacity-30"
-        />
-      </div>
+      {/* Removed separate image and overlay, now using section background */}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
