@@ -19,21 +19,20 @@ export default function ContactMap() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Map Placeholder */}
+          {/* Embedded Google Map */}
           <div className="lg:col-span-2 opacity-0 animate-fade-in-up animate-delay-400">
             <Card className="overflow-hidden h-96">
               <CardContent className="p-0 h-full">
-                <div className="w-full h-full bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center relative">
-                  <div className="text-center">
-                    <MapPin className="h-16 w-16 text-secondary mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-foreground mb-2">Interactive Map</h3>
-                    <p className="text-muted-foreground">123 Creative Street, New York, NY 10001</p>
-                  </div>
-                  {/* Simulated map pins */}
-                  <div className="absolute top-1/4 left-1/3 w-4 h-4 bg-secondary rounded-full animate-pulse" />
-                  <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-secondary/60 rounded-full" />
-                  <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-secondary/40 rounded-full" />
-                </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3992.034580582168!2d38.78372407507722!3d8.997608691062458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85371032e8b5%3A0x8bad36741b2652f4!2zTWVkaGFuaWFsZW0gTWFsbCB8IEJvbGUgTWVkaGFuaWFsZW0gfCDhiJjhi7XhiIDhipLhi6vhiIjhiJ0g4Yie4YiNIHwg4Ymm4YiMIOGImOGLs-GKkuGLq-GIiOGInQ!5e1!3m2!1sen!2set!4v1757773340156!5m2!1sen!2set"
+                  width="600"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Studio Location"
+                />
               </CardContent>
             </Card>
           </div>
@@ -48,11 +47,11 @@ export default function ContactMap() {
                     <div>
                       <h4 className="font-semibold text-foreground">Address</h4>
                       <p className="text-muted-foreground text-sm">
-                        123 Creative Street
+                        Bole Medhaniyalem
                         <br />
-                        New York, NY 10001
+                        Addis Ababa, Ethiopia
                         <br />
-                        United States
+                        Ethiopia
                       </p>
                     </div>
                   </div>
@@ -72,18 +71,12 @@ export default function ContactMap() {
                   <div className="pt-4 space-y-3">
                     <Button
                       className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground"
-                      onClick={() => window.open("https://maps.google.com", "_blank")}
+                      onClick={() => window.open("https://maps.app.goo.gl/LJQJeUcYkHQ1f5hL7", "_blank")}
                     >
                       <Navigation className="mr-2 h-4 w-4" />
                       Get Directions
                     </Button>
-                    <Button
-                      variant="outline"
-                      className="w-full border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground bg-transparent"
-                    >
-                      <Clock className="mr-2 h-4 w-4" />
-                      Schedule Visit
-                    </Button>
+                    
                   </div>
                 </div>
               </CardContent>
@@ -96,7 +89,6 @@ export default function ContactMap() {
                   <p>• Free street parking available</p>
                   <p>• Paid garage 2 blocks away</p>
                   <p>• Wheelchair accessible entrance</p>
-                  <p>• Subway: 14th St-Union Sq (4,5,6,L,N,Q,R,W)</p>
                 </div>
               </CardContent>
             </Card>
