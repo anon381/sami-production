@@ -5,10 +5,10 @@ import { Phone, Mail, MessageCircle, Clock } from "lucide-react"
 
 export default function ContactHero() {
   const quickActions = [
-    { icon: Phone, label: "Call Now", value: "+1 (555) 123-4567", action: "tel:+15551234567" },
-    { icon: Mail, label: "Email Us", value: "hello@samiproduction.com", action: "mailto:hello@samiproduction.com" },
-    { icon: MessageCircle, label: "Live Chat", value: "Available 9-6 EST", action: "#" },
-    { icon: Clock, label: "Schedule Call", value: "Book a meeting", action: "#" },
+    { icon: Phone, label: "Call Now", value: "+251989043855", action: "tel:+251989043855" },
+    { icon: Clock, label: "Telegram", value: "@SAMIBOY2026", action: "https://t.me/SAMIBOY2026" },
+    { icon: Clock, label: "Instagram", value: "samifilmproduction", action: "https://instagram.com/samifilmproduction" },
+    { icon: Clock, label: "We Work 24/7", value: "Always Available", action: "#" },
   ]
 
   return (
