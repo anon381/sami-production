@@ -52,7 +52,7 @@ export default function VideoEditingPage() {
       <ServiceDetailHero {...serviceData} />
       <ServiceFeatures features={serviceData.features} />
       <ServiceProcess process={serviceData.process} />
-      <ServicePortfolio portfolio={serviceData.portfolio} />
+      {/* <ServicePortfolio portfolio={serviceData.portfolio} /> */}
     </main>
   );
 }
