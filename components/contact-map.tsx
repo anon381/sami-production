@@ -23,16 +23,18 @@ export default function ContactMap() {
           <div className="lg:col-span-2 opacity-0 animate-fade-in-up animate-delay-400">
             <Card className="overflow-hidden h-96">
               <CardContent className="p-0 h-full">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3992.034580582168!2d38.78372407507722!3d8.997608691062458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85371032e8b5%3A0x8bad36741b2652f4!2zTWVkaGFuaWFsZW0gTWFsbCB8IEJvbGUgTWVkaGFuaWFsZW0gfCDhiJjhi7XhiIDhipLhi6vhiIjhiJ0g4Yie4YiNIHwg4Ymm4YiMIOGImOGLs-GKkuGLq-GIiOGInQ!5e1!3m2!1sen!2set!4v1757773340156!5m2!1sen!2set"
-                  width="600"
-                  height="450"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Studio Location"
-                />
+                <div style={{ width: '100%', height: '100%' }}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3992.034580582168!2d38.78372407507722!3d8.997608691062458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85371032e8b5%3A0x8bad36741b2652f4!2zTWVkaGFuaWFsZW0gTWFsbCB8IEJvbGUgTWVkaGFuaWFsZW0gfCDhiJjhi7XhiIDhipLhi6vhiIjhiJ0g4Yie4YiNIHwg4Ymm4YiMIOGImOGLs-GKkuGLq-GIiOGInQ!5e1!3m2!1sen!2set!4v1757773340156!5m2!1sen!2set"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, width: '100%', height: '100%' }}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Studio Location"
+                  />
+                </div>
               </CardContent>
             </Card>
           </div>
