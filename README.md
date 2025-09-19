@@ -1,4 +1,4 @@
-> ongoing project
+> ongoing-project
 
 ## live demo
 
